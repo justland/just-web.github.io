@@ -1,0 +1,12 @@
+name: release
+on:
+  push:
+    branches: [main]
+
+jobs:
+  code:
+    uses: justland/.github/.github/workflows/pnpm-verify-linux.yml@main
+
+  docgen:
+      uses: justland/.github/.github/workflows/pnpm-docs.yml@main
+      needs: code
