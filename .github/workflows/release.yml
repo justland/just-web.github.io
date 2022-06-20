@@ -5,7 +5,7 @@ on:
 
 jobs:
   code:
-    uses: justland/.github/.github/workflows/pnpm-verify-linux.yml@main
+    uses: justland/.github/.github/workflows/pnpm-docs-verify.yml@main
 
   docgen:
       uses: justland/.github/.github/workflows/pnpm-docs.yml@main
