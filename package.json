@@ -4,13 +4,21 @@
     "a": "pnpm --filter ./astro",
     "build": "turbo build",
     "build:doc": "turbo build",
+    "clean": "turbo run clean",
+    "coverage": "turbo run coverage",
+    "cs": "changeset",
     "d": "pnpm --filter ./docusaurus",
-    "prepare": "husky install",
+    "depcheck": "turbo run depcheck",
+    "lint": "turbo run lint",
+    "nuke:local": "rimraf node_modules",
+    "nuke": "turbo run nuke && pnpm nuke:local",
     "prepack": "pinst --disable",
     "postpack": "pinst --enable",
+    "prepare": "husky install",
+    "size": "turbo run size",
+    "test": "turbo run test",
     "verify": "turbo lint build test depcheck size"
   },
-  "packageManager": "pnpm@8.3.1",
   "devDependencies": {
     "@changesets/cli": "^2.26.1",
     "@commitlint/cli": "^17.6.1",
@@ -22,5 +30,6 @@
     "pinst": "^3.0.0",
     "turbo": "^1.9.3",
     "typescript": "^5.0.0"
-  }
+  },
+  "packageManager": "pnpm@8.3.1"
 }
