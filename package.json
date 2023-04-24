@@ -1,12 +1,14 @@
 {
   "private": true,
   "scripts": {
+    "a": "pnpm --filter ./astro",
     "build": "turbo build",
     "build:doc": "turbo build",
     "d": "pnpm --filter ./docusaurus",
     "prepare": "husky install",
     "prepack": "pinst --disable",
-    "postpack": "pinst --enable"
+    "postpack": "pinst --enable",
+    "verify": "turbo lint build test depcheck size"
   },
   "packageManager": "pnpm@8.3.1",
   "devDependencies": {
