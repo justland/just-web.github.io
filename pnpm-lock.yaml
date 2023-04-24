@@ -35,7 +35,13 @@ importers:
         specifier: ^5.0.0
         version: 5.0.4
 
-  astro:
+  astro-react:
+    dependencies:
+      astro:
+        specifier: ^2.3.0
+        version: 2.3.0(@types/node@18.16.0)
+
+  astro-solid:
     dependencies:
       astro:
         specifier: ^2.3.0
