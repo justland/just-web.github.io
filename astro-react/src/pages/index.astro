@@ -1,8 +1,9 @@
 ---
-import Card from '../components/Card.astro';
-import Layout from '../layouts/Layout.astro';
-import { Hello } from '../components/hello.jsx';
-
+import Card from '../components/Card.astro'
+import { AppContextProvider } from '../components/app_context.jsx'
+import { Hello, HelloContext, HelloValue, ModValue } from '../components/hello.jsx'
+import { HelloApp } from '../components/hello_app'
+import Layout from '../layouts/Layout.astro'
 ---
 
 <Layout title="Welcome to Astro.">
@@ -13,7 +14,14 @@ import { Hello } from '../components/hello.jsx';
 			<strong>Code Challenge:</strong> Tweak the "Welcome to Astro" message above.
 		</p>
 		<ul role="list" class="link-card-grid">
-			<Hello/>
+			<HelloApp client:only="react" />
+			<HelloValue client:only="react" />
+			<ModValue client:only="react" />
+
+			<!-- <AppContextProvider client:only="react"> -->
+			<!-- <Hello /> -->
+			<!-- <HelloContext /> -->
+			<!-- </AppContextProvider> -->
 			<Card
 				href="https://docs.astro.build/"
 				title="Documentation"

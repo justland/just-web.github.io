@@ -40,6 +40,9 @@ importers:
       '@astrojs/react':
         specifier: ^2.1.1
         version: 2.1.1(@types/react-dom@18.0.11)(@types/react@18.0.38)(react-dom@18.2.0)(react@18.2.0)
+      '@nanostores/react':
+        specifier: ^0.5.0
+        version: 0.5.0(nanostores@0.8.0)(react@18.2.0)
       '@types/react':
         specifier: ^18.0.21
         version: 18.0.38
@@ -49,6 +52,9 @@ importers:
       astro:
         specifier: ^2.3.0
         version: 2.3.0(@types/node@18.16.0)
+      nanostores:
+        specifier: ^0.8.0
+        version: 0.8.0
       react:
         specifier: ^18.0.0
         version: 18.2.0
@@ -3288,6 +3294,18 @@ packages:
 
   /@mdx-js/util@1.6.22:
     resolution: {integrity: sha512-H1rQc1ZOHANWBvPcW+JpGwr+juXSxM8Q8YCkm3GhZd8REu1fHR3z99CErO1p9pkcfcxZnMdIZdIsXkOHY0NilA==}
+    dev: false
+
+  /@nanostores/react@0.5.0(nanostores@0.8.0)(react@18.2.0):
+    resolution: {integrity: sha512-1i+VhIwK+R51RXmnLul/C7a2WYkBF17/KsHsPzIboMXVjKfUvPbViZrwaeiqLFyHFUPgylq2//VkPqx3wmiCeg==}
+    engines: {node: ^16.0.0 || >=18.0.0}
+    peerDependencies:
+      nanostores: ^0.8.0
+      react: '>=18.0.0'
+    dependencies:
+      nanostores: 0.8.0
+      react: 18.2.0
+      use-sync-external-store: 1.2.0(react@18.2.0)
     dev: false
 
   /@next/env@13.3.1:
@@ -9014,6 +9032,11 @@ packages:
     hasBin: true
     dev: false
 
+  /nanostores@0.8.0:
+    resolution: {integrity: sha512-Xgs3qwYhNYXyglDe41JEtACDvFZELFRofDBqBuJ02JG1mrwXWneQTsk89GHvW0bgLPcWXOz4GRm4enwgjnD8FQ==}
+    engines: {node: ^16.0.0 || >=18.0.0}
+    dev: false
+
   /natural-compare-lite@1.4.0:
     resolution: {integrity: sha512-Tj+HTDSJJKaZnfiuw+iaF9skdPpTo2GtEly5JHnWV/hfv2Qj/9RKsGISQtLh2ox3l5EAGw487hnBee0sIJ6v2g==}
     dev: true
@@ -12379,6 +12402,14 @@ packages:
       react: ^16.8.0 || ^17.0.0 || ^18.0.0
     dependencies:
       react: 17.0.2
+    dev: false
+
+  /use-sync-external-store@1.2.0(react@18.2.0):
+    resolution: {integrity: sha512-eEgnFxGQ1Ife9bzYs6VLi8/4X6CObHMw9Qr9tPY43iKwsPw8xE8+EFsf/2cFZ5S3esXgpWgtSCtLNS41F+sKPA==}
+    peerDependencies:
+      react: ^16.8.0 || ^17.0.0 || ^18.0.0
+    dependencies:
+      react: 18.2.0
     dev: false
 
   /util-deprecate@1.0.2:
