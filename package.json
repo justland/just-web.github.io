@@ -1,7 +1,8 @@
 {
   "private": true,
   "scripts": {
-    "a": "pnpm --filter ./astro",
+    "ar": "pnpm --filter ./astro-react",
+    "as": "pnpm --filter ./astro-solid",
     "build": "turbo build",
     "build:doc": "turbo build",
     "clean": "turbo run clean",
@@ -10,6 +11,7 @@
     "d": "pnpm --filter ./docusaurus",
     "depcheck": "turbo run depcheck",
     "lint": "turbo run lint",
+    "n": "pnpm --filter ./nextjs",
     "nuke:local": "rimraf node_modules",
     "nuke": "turbo run nuke && pnpm nuke:local",
     "prepack": "pinst --disable",
