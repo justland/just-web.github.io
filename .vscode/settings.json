@@ -3,6 +3,8 @@
 		"astro",
 		"clsx",
 		"nextjs",
-		"pinst"
+		"pinst",
+		"rgba",
+		"tsconfigs"
 	]
 }
