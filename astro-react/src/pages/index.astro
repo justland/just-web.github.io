@@ -1,7 +1,7 @@
 ---
 import Card from '../components/Card.astro'
 import { AppContextProvider } from '../components/app_context.jsx'
-import { Hello, HelloContext, HelloValue, ModValue } from '../components/hello.jsx'
+import { Hello, HelloContext, HelloValue, ModValue, SetValue } from '../components/hello.jsx'
 import { HelloApp } from '../components/hello_app'
 import Layout from '../layouts/Layout.astro'
 ---
@@ -16,6 +16,7 @@ import Layout from '../layouts/Layout.astro'
 		<ul role="list" class="link-card-grid">
 			<HelloApp client:only="react" />
 			<HelloValue client:only="react" />
+			<SetValue client:only="react" />
 			<ModValue client:only="react" />
 
 			<!-- <AppContextProvider client:only="react"> -->
