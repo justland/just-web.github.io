@@ -40,6 +40,12 @@ importers:
       '@astrojs/react':
         specifier: ^2.1.1
         version: 2.1.1(@types/react-dom@18.0.11)(@types/react@18.0.38)(react-dom@18.2.0)(react@18.2.0)
+      '@just-web/react':
+        specifier: ^8.0.0
+        version: 8.0.0(@just-web/app@7.0.0)(@just-web/states@7.0.0)(react-dom@18.2.0)(react@18.2.0)
+      '@just-web/states':
+        specifier: ^7.0.0
+        version: 7.0.0
       '@nanostores/react':
         specifier: ^0.5.0
         version: 0.5.0(nanostores@0.8.0)(react@18.2.0)
@@ -3230,6 +3236,61 @@ packages:
       '@jridgewell/resolve-uri': 3.1.1
       '@jridgewell/sourcemap-codec': 1.4.15
 
+  /@just-func/types@0.5.1:
+    resolution: {integrity: sha512-yP+XbIIT5qGI/6TOZ0lRFHq2UubCfpf+2EKQPhEwOGsvh1vJTdDTPGyNWYHmLMLT5jx8h/SR3mAAVDmYyAjpwA==}
+    dependencies:
+      type-plus: 5.6.0
+    dev: false
+
+  /@just-web/app@7.0.0:
+    resolution: {integrity: sha512-UXG/wVnCZpA+YpmnFIAV2JES/IeTSOs5Pi++4P/NcitmAmfnPk//eHsDOyBRAcaynUMcDDJDI18gDXJffjWv4g==}
+    dependencies:
+      '@just-web/id': 6.0.2
+      '@just-web/log': 7.0.0
+      '@unional/gizmo': 1.2.0
+      iso-error: 6.0.1
+      type-plus: 6.6.0
+    dev: false
+
+  /@just-web/id@6.0.2:
+    resolution: {integrity: sha512-28Tw8bs5fGS1CMTESqlO1QWcx+C9rFfMgVnF1U6G0+L+V2xz2R2ZZFTE1BMMw+wZ4SmYXDu7/U95Aja6kwCYYQ==}
+    dependencies:
+      '@unional/gizmo': 1.2.0
+    dev: false
+
+  /@just-web/log@7.0.0:
+    resolution: {integrity: sha512-rWRL9ntClpr8RnSNYqH2pkbhcQ/hXyjD5zql2uOED3QOGcVpfKRqWEs4pkRkE+0k77axjnkW4q/AjiuHYfzKGg==}
+    dependencies:
+      '@just-func/types': 0.5.1
+      '@just-web/id': 6.0.2
+      '@unional/gizmo': 1.2.0
+      standard-log: 12.1.1
+      type-plus: 6.6.0
+    dev: false
+
+  /@just-web/react@8.0.0(@just-web/app@7.0.0)(@just-web/states@7.0.0)(react-dom@18.2.0)(react@18.2.0):
+    resolution: {integrity: sha512-3If8UTvtBNEfhszFYpHaWzNc1LDKZRdUEXwIprs1ayJXykDkPEXf8kfgi/bNfUcwkEAVfgqS1Ua2tJ8Vp0g5Dw==}
+    peerDependencies:
+      '@just-web/app': ^7.0.0-beta
+      '@just-web/states': ^7.0.0-beta
+      react: ^16 || ^17 || ^18
+      react-dom: ^16 || ^17 || ^18
+    dependencies:
+      '@just-web/app': 7.0.0
+      '@just-web/states': 7.0.0
+      react: 18.2.0
+      react-dom: 18.2.0(react@18.2.0)
+      type-plus: 6.6.0
+    dev: false
+
+  /@just-web/states@7.0.0:
+    resolution: {integrity: sha512-51YjSw5H61nkm28AqK8V+bSzyN7uLpN+T3HXsllIVK5N/GGwdYf8/KmvOTDFY6wHg8ZeldJTNGiOO/prfkSFdg==}
+    dependencies:
+      immer: /@unional/immer@9.0.0-beta.2
+      tersify: 3.12.1
+      type-plus: 6.6.0
+    dev: false
+
   /@leichtgewicht/ip-codec@2.0.4:
     resolution: {integrity: sha512-Hcv+nVC0kZnQ3tD9GVu5xSMR4VVYOteQIr/hwFPVEvPdlXqgGEuRjiheChHgdM+JyqdgNcmzZOX/tnl0JOiI7A==}
     dev: false
@@ -4108,6 +4169,15 @@ packages:
     dependencies:
       '@typescript-eslint/types': 5.59.0
       eslint-visitor-keys: 3.4.0
+
+  /@unional/gizmo@1.2.0:
+    resolution: {integrity: sha512-nP8iHl/red9t5mkuNLrlDnvFldU/JlxoiIcGwvgEBrxjtZBjars+f7+/JpuMJdl7xTZium3NcWghMq+NKBEIdw==}
+    engines: {node: '>= 14.16'}
+    dev: false
+
+  /@unional/immer@9.0.0-beta.2:
+    resolution: {integrity: sha512-fJ4NxaKR4T/qfcSoPw8dFmKddmF7s2HqlUKSF0Xd1o1t6RZxQn7smhjJtFHfpr7gTQeoUBdZLiLt/8HMnzjGnQ==}
+    dev: false
 
   /@vscode/emmet-helper@2.8.7:
     resolution: {integrity: sha512-y67wWaWBhlWKMX3FNOXcMPh83+xS31IqobBP6vi3HkMRxv14Bti3xgu+ya/c3oKZ0OM/QMvO+oBCwGWqbPv7Rw==}
@@ -8013,6 +8083,11 @@ packages:
   /isexe@2.0.0:
     resolution: {integrity: sha512-RHxMLp9lnKHGHRng9QFhRCMbYAcVpn69smSGcq3f36xjgVVWThj4qqLbTLlq7Ssj8B+fIQ1EuCEGI2lKsyQeIw==}
 
+  /iso-error@6.0.1:
+    resolution: {integrity: sha512-420ZdnLcJWcifHFxw7cllbpVMzlrDfZsALMXdnwsI9uKUd2nuRJ2KRA2gjCVXgU5FgNquE7PmRSZWzBKmjNjJA==}
+    engines: {node: '>= 10'}
+    dev: false
+
   /isobject@3.0.1:
     resolution: {integrity: sha512-WhB9zCku7EGTj/HQQRz5aUQEUeoQZH2bWcltRErOpymJ4boYE6wL9Tbr23krRPSZ+C5zqNSrSw+Cc7sZZ4b7vg==}
     engines: {node: '>=0.10.0'}
@@ -11369,6 +11444,16 @@ packages:
     deprecated: 'Modern JS already guarantees Array#sort() is a stable sort, so this library is deprecated. See the compatibility table on MDN: https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/sort#browser_compatibility'
     dev: false
 
+  /standard-log@12.1.1:
+    resolution: {integrity: sha512-P7wSOJHhMGEDbIddWwZUO2HLHM2nyAusU4aZmRCXgx5JDH1BUOCtr1I6irMmYk8VSWbmuYtjD97FaJImc288lg==}
+    dependencies:
+      '@just-func/types': 0.5.1
+      iso-error: 6.0.1
+      ms: 2.1.3
+      type-plus: 6.6.0
+      upper-case: 2.0.2
+    dev: false
+
   /state-toggle@1.0.3:
     resolution: {integrity: sha512-d/5Z4/2iiCnHw6Xzghyhb+GcmF89bxwgXG60wjIiZaxnymbyOmI8Hk4VqHXiVVp6u2ysaskFfXg3ekCj4WNftQ==}
     dev: false
@@ -11733,6 +11818,14 @@ packages:
       commander: 2.20.3
       source-map-support: 0.5.21
 
+  /tersify@3.12.1:
+    resolution: {integrity: sha512-VwzXGHZSOB4T27s4uvh9v8FYrNXyfVz0nBQi28TDwrZoQwT8ZJUp1W2Ff73ekN07stJSb0D+pr6iXeNeFqTI6Q==}
+    dependencies:
+      acorn: 8.8.2
+      is-buffer: 2.0.5
+      unpartial: 1.0.4
+    dev: false
+
   /text-extensions@1.9.0:
     resolution: {integrity: sha512-wiBrwC1EhBelW12Zy26JeOUkQ5mRu+5o8rpsJk5+2t+Y5vE7e842qtZDQ2g1NpX/29HdyFeJ4nSIhI47ENSxlQ==}
     engines: {node: '>=0.10'}
@@ -12063,6 +12156,20 @@ packages:
       mime-types: 2.1.35
     dev: false
 
+  /type-plus@5.6.0:
+    resolution: {integrity: sha512-LAIvZzs6mKXYHzwRfGeOuWKsE5jHndwWlLheulMl6eWDSGa1bfZCd0aLQSMgP3HZTbazx/P2UumCqtOz5AMctA==}
+    dependencies:
+      tersify: 3.12.1
+      unpartial: 1.0.4
+    dev: false
+
+  /type-plus@6.6.0:
+    resolution: {integrity: sha512-mTi2ZIx9+Uh9vh2Xr/ydjpfbwl8iDADTAty5JNZ1fo5qIzEqWVMT0YnCqnESQk5mEc6g7Xg5fC95X6HSntzhlw==}
+    dependencies:
+      tersify: 3.12.1
+      unpartial: 1.0.4
+    dev: false
+
   /typed-array-length@1.0.4:
     resolution: {integrity: sha512-KjZypGq+I/H7HI5HlOoGHkWUUGq+Q0TPhQurLbyrVrvnKTBgzLhIJ7j6J/XTQOi0d1RjyZ0wdas8bKs2p0x3Ng==}
     dependencies:
@@ -12297,6 +12404,11 @@ packages:
     resolution: {integrity: sha512-hAZsKq7Yy11Zu1DE0OzWjw7nnLZmJZYTDZZyEFHZdUhV8FkH5MCfoU1XMaxXovpyW5nq5scPqq0ZDP9Zyl04oQ==}
     engines: {node: '>= 10.0.0'}
 
+  /unpartial@1.0.4:
+    resolution: {integrity: sha512-xY8319WOQcRDRVFWvTty2YJXKvM8XRPehqWZUd7k/BatpbuitI4Jd+2xlwjTZbZScSvT75TnUsUmy5uwFa3o0g==}
+    engines: {node: '>=6'}
+    dev: false
+
   /unpipe@1.0.0:
     resolution: {integrity: sha512-pjy2bYhSsufwWlKwPc+l3cN7+wuJlK6uz0YdJEOlQDbl6jo/YlPi4mb8agUkVC8BF7V8NuzeyPNqRksA3hztKQ==}
     engines: {node: '>= 0.8'}
@@ -12330,6 +12442,12 @@ packages:
       semver: 7.5.0
       semver-diff: 3.1.1
       xdg-basedir: 4.0.0
+    dev: false
+
+  /upper-case@2.0.2:
+    resolution: {integrity: sha512-KgdgDGJt2TpuwBUIjgG6lzw2GWFRCW9Qkfkiv0DxqHHLYJHmtmdUIKcZd8rHgFSjopVTlw6ggzCm1b8MFQwikg==}
+    dependencies:
+      tslib: 2.5.0
     dev: false
 
   /uri-js@4.4.1:

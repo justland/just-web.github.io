@@ -1,0 +1,20 @@
+{
+	"folders": [
+		{
+			"name": "just-web.github.io",
+			"path": "."
+		},
+		{
+			"name": "just-web-react",
+			"path": "../just-web-react"
+		},
+		{
+			"name": "just-web",
+			"path": "../just-web"
+		}
+	],
+	"settings": {
+    "tsimporter.doubleQuotes": false,
+    "tsimporter.emitSemicolon": false
+  }
+}

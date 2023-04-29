@@ -1,49 +1,62 @@
 ---
 import Card from '../components/Card.astro'
-import { AppContextProvider } from '../components/app_context.jsx'
-import { Hello, HelloContext, HelloValue, ModValue, SetValue } from '../components/hello.jsx'
-import { HelloApp } from '../components/hello_app'
+import { JustStoreDisplay, JustStoreIncrement, JustStoreProvider } from '../components/just_react.jsx'
+import {
+	NanoObjectGet,
+	NanoObjectPlusOne,
+	NanoValueDisplay,
+	NanoValueIncrement
+} from '../components/nanostores.jsx'
+import { ReactContextDisplay, ReactContextIncrement, ReactContextProvider } from '../components/react_context.jsx'
 import Layout from '../layouts/Layout.astro'
 ---
 
 <Layout title="Welcome to Astro.">
 	<main>
-		<h1>Welcome to <span class="text-gradient">Astro</span></h1>
-		<p class="instructions">
-			To get started, open the directory <code>src/pages</code> in your project.<br />
-			<strong>Code Challenge:</strong> Tweak the "Welcome to Astro" message above.
-		</p>
-		<ul role="list" class="link-card-grid">
-			<HelloApp client:only="react" />
-			<HelloValue client:only="react" />
-			<SetValue client:only="react" />
-			<ModValue client:only="react" />
+		<JustStoreProvider client:only="react">
+			<ReactContextProvider client:only="react" value={{ a: 123 }}>
+				<h1>Welcome to <span class="text-gradient">Astro</span></h1>
+			<p class="instructions">
+				To get started, open the directory <code>src/pages</code> in your project.<br />
+				<strong>Code Challenge:</strong> Tweak the "Welcome to Astro" message above.
+			</p>
+			<ul role="list" class="link-card-grid">
+				<NanoValueIncrement client:only="react" />
+				<NanoValueDisplay client:only="react" />
+				<NanoObjectPlusOne client:only="react" />
+				<NanoObjectGet client:only="react" />
+				<!-- <JustStoreIncrement client:only="react" />
+				<JustStoreDisplay client:only="react" /> -->
+				<ReactContextIncrement client:only="react" />
+				<ReactContextDisplay client:only="react" />
 
-			<!-- <AppContextProvider client:only="react"> -->
-			<!-- <Hello /> -->
-			<!-- <HelloContext /> -->
-			<!-- </AppContextProvider> -->
-			<Card
-				href="https://docs.astro.build/"
-				title="Documentation"
-				body="Learn how Astro works and explore the official API docs."
-			/>
-			<Card
-				href="https://astro.build/integrations/"
-				title="Integrations"
-				body="Supercharge your project with new frameworks and libraries."
-			/>
-			<Card
-				href="https://astro.build/themes/"
-				title="Themes"
-				body="Explore a galaxy of community-built starter themes."
-			/>
-			<Card
-				href="https://astro.build/chat/"
-				title="Community"
-				body="Come say hi to our amazing Discord community. ❤️"
-			/>
-		</ul>
+				<!-- <AppContextProvider client:only="react"> -->
+				<!-- <Hello /> -->
+				<!-- <HelloContext /> -->
+				<!-- </AppContextProvider> -->
+				<Card
+					href="https://docs.astro.build/"
+					title="Documentation"
+					body="Learn how Astro works and explore the official API docs."
+				/>
+				<Card
+					href="https://astro.build/integrations/"
+					title="Integrations"
+					body="Supercharge your project with new frameworks and libraries."
+				/>
+				<Card
+					href="https://astro.build/themes/"
+					title="Themes"
+					body="Explore a galaxy of community-built starter themes."
+				/>
+				<Card
+					href="https://astro.build/chat/"
+					title="Community"
+					body="Come say hi to our amazing Discord community. ❤️"
+				/>
+			</ul>
+			</ReactContextProvider>
+		</JustStoreProvider>
 	</main>
 </Layout>
 
