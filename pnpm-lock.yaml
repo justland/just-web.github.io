@@ -47,8 +47,8 @@ importers:
         specifier: ^7.0.0
         version: 7.0.0
       '@nanostores/react':
-        specifier: ^0.5.0
-        version: 0.5.0(nanostores@0.8.0)(react@18.2.0)
+        specifier: ^0.7.0
+        version: 0.7.0(nanostores@0.8.0)(react@18.2.0)
       '@types/react':
         specifier: ^18.0.21
         version: 18.0.38
@@ -3357,16 +3357,15 @@ packages:
     resolution: {integrity: sha512-H1rQc1ZOHANWBvPcW+JpGwr+juXSxM8Q8YCkm3GhZd8REu1fHR3z99CErO1p9pkcfcxZnMdIZdIsXkOHY0NilA==}
     dev: false
 
-  /@nanostores/react@0.5.0(nanostores@0.8.0)(react@18.2.0):
-    resolution: {integrity: sha512-1i+VhIwK+R51RXmnLul/C7a2WYkBF17/KsHsPzIboMXVjKfUvPbViZrwaeiqLFyHFUPgylq2//VkPqx3wmiCeg==}
-    engines: {node: ^16.0.0 || >=18.0.0}
+  /@nanostores/react@0.7.0(nanostores@0.8.0)(react@18.2.0):
+    resolution: {integrity: sha512-RHX3Ajp+CwQ8xr4Ls4kZcBQgK8SkgB8YAHNudEslCOplaQ7WpLRFzTkDcNKWYXTqSDL6sKlqdIv/LbXe20Kt0Q==}
+    engines: {node: ^16.0.0 || ^18.0.0 || >=20.0.0}
     peerDependencies:
-      nanostores: ^0.8.0
+      nanostores: ^0.9.0
       react: '>=18.0.0'
     dependencies:
       nanostores: 0.8.0
       react: 18.2.0
-      use-sync-external-store: 1.2.0(react@18.2.0)
     dev: false
 
   /@next/env@13.3.1:
@@ -12479,14 +12478,6 @@ packages:
       '@types/react': 18.0.38
       react: 18.2.0
       use-isomorphic-layout-effect: 1.1.2(@types/react@18.0.38)(react@18.2.0)
-    dev: false
-
-  /use-sync-external-store@1.2.0(react@18.2.0):
-    resolution: {integrity: sha512-eEgnFxGQ1Ife9bzYs6VLi8/4X6CObHMw9Qr9tPY43iKwsPw8xE8+EFsf/2cFZ5S3esXgpWgtSCtLNS41F+sKPA==}
-    peerDependencies:
-      react: ^16.8.0 || ^17.0.0 || ^18.0.0
-    dependencies:
-      react: 18.2.0
     dev: false
 
   /util-deprecate@1.0.2:
