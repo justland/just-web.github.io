@@ -5,8 +5,8 @@ on:
 
 jobs:
   code:
-    uses: justland/.github/.github/workflows/pnpm-docs-verify.yml@main
-
-  docgen:
-      uses: justland/.github/.github/workflows/pnpm-docs.yml@main
-      needs: code
+    uses: justland/.github/.github/workflows/pnpm-verify.yml@main
+    permissions:
+      contents: read
+    with:
+      os: '["ubuntu-latest"]'
