@@ -2,3 +2,22 @@ packages:
   - astro-*
   - docusaurus
   - nextjs
+
+# pnpm 10+ blocks dependency lifecycle scripts by default. Only the two that
+# genuinely build something are allowed through: esbuild fetches its platform
+# binary and unrs-resolver its native addon, so both fail at build time rather
+# than install time when skipped. core-js and core-js-pure are denied on
+# purpose — their postinstall only prints a funding banner.
+allowBuilds:
+  core-js: false
+  core-js-pure: false
+  esbuild: true
+  unrs-resolver: true
+
+# Docusaurus 2.4.0 builds its ProgressPlugin with `name`/`color`/`reporters`,
+# options webpack rejected once it tightened that schema — so regenerating the
+# lockfile and letting webpack float to 5.110 breaks the docs build with a
+# ValidationError. Pin webpack to the line Docusaurus 2.4 was released against.
+# Drop this override when the docs site moves to Docusaurus 3 (see #95).
+overrides:
+  webpack: ~5.88.0
