@@ -1,12 +1,8 @@
 {
-	"cSpell.words": [
-    "astro",
-    "astrojs",
-    "clsx",
-    "nanostores",
-    "nextjs",
-    "pinst",
-    "rgba",
-    "tsconfigs"
-  ]
+	"cSpell.words": ["astro", "astrojs", "biomejs", "clsx", "nanostores", "nextjs", "rgba", "tsconfigs", "webpackbar"],
+	"editor.defaultFormatter": "biomejs.biome",
+	"editor.codeActionsOnSave": {
+		"source.fixAll.biome": "explicit",
+		"source.organizeImports.biome": "explicit"
+	}
 }

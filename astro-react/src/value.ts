@@ -10,7 +10,7 @@ const app = (() => {
 		a,
 		getA() {
 			return a
-		}
+		},
 	}
 })()
 export const value = atom(app)

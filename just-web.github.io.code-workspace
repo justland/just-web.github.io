@@ -14,7 +14,7 @@
 		}
 	],
 	"settings": {
-    "tsimporter.doubleQuotes": false,
-    "tsimporter.emitSemicolon": false
-  }
+		"tsimporter.doubleQuotes": false,
+		"tsimporter.emitSemicolon": false
+	}
 }

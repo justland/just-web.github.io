@@ -10,14 +10,22 @@ export function JustStoreProvider({ children }: PropsWithChildren<Record<string,
 }
 
 export function JustStoreIncrement() {
-	const [, setCount] = useStoreContext(JustStoreContext, s => s.count, (s, v) => {
-		s.count = v
-	})
-	return <button onClick={() => setCount(v => v + 1)}>JustStore ++</button>
+	const [, setCount] = useStoreContext(
+		JustStoreContext,
+		(s) => s.count,
+		(s, v) => {
+			s.count = v
+		},
+	)
+	return (
+		<button type="button" onClick={() => setCount((v) => v + 1)}>
+			JustStore ++
+		</button>
+	)
 	// return <button onClick={() => alert(123)}>JustStore ++</button>
 }
 
 export function JustStoreDisplay() {
-	const [count] = useStoreContext(JustStoreContext, s => s.count)
+	const [count] = useStoreContext(JustStoreContext, (s) => s.count)
 	return <div>justStore.count: {count}</div>
 }
