@@ -3,6 +3,14 @@ packages:
   - docusaurus
   - nextjs
 
+# Supply-chain soak. `minimumreleaseage` in .npmrc only makes pnpm silently drop
+# too-young versions from resolution; it never fails. Declared here, with
+# minimumReleaseAgeStrict, pnpm verifies the lockfile on every install and errors
+# on a version younger than the soak instead of quietly resolving around it.
+# Confirm with the `Verifying lockfile against supply-chain policies` line on install.
+minimumReleaseAge: 1440
+minimumReleaseAgeStrict: true
+
 # pnpm 10+ blocks dependency lifecycle scripts by default. Only the two that
 # genuinely build something are allowed through: esbuild fetches its platform
 # binary and unrs-resolver its native addon, so both fail at build time rather

@@ -11,10 +11,11 @@
 		"lint": "biome check",
 		"lint:fix": "biome check --write",
 		"n": "pnpm --filter ./nextjs",
-		"nuke:local": "node -e \"fs.rmSync('node_modules',{recursive:true,force:true})\"",
 		"nuke": "turbo run nuke && pnpm nuke:local",
+		"nuke:local": "node -e \"fs.rmSync('node_modules',{recursive:true,force:true})\"",
 		"prepare": "husky",
-		"verify": "pnpm lint && turbo build lint"
+		"typecheck": "turbo run typecheck",
+		"verify": "pnpm lint && turbo build typecheck"
 	},
 	"devDependencies": {
 		"@biomejs/biome": "^2.5.11",

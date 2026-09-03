@@ -16,6 +16,16 @@
 			"!**/*.svg"
 		]
 	},
+	// `@repobuddy/biome/recommended` ships useNodejsImportProtocol at `info`, which
+	// biome reports without failing - `biome check` still exits 0 on a bare `import
+	// "path"`. Pinned to `error` so the rule actually gates.
+	"linter": {
+		"rules": {
+			"style": {
+				"useNodejsImportProtocol": "error"
+			}
+		}
+	},
 	"overrides": [
 		{
 			"includes": ["**/*.css"],
