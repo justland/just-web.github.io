@@ -1,0 +1,57 @@
+{
+	"$schema": "https://biomejs.dev/schemas/2.5.11/schema.json",
+	"extends": ["@repobuddy/biome/recommended"],
+	"files": {
+		"includes": [
+			"!**/node_modules",
+			"!**/.next",
+			"!**/.astro",
+			"!**/.docusaurus",
+			"!**/build",
+			"!**/dist",
+			"!**/.turbo",
+			"!pnpm-lock.yaml",
+			"!skills-lock.json",
+			"!**/*.astro",
+			"!**/*.svg"
+		]
+	},
+	// `@repobuddy/biome/recommended` ships useNodejsImportProtocol at `info`, which
+	// biome reports without failing - `biome check` still exits 0 on a bare `import
+	// "path"`. Pinned to `error` so the rule actually gates.
+	"linter": {
+		"rules": {
+			"style": {
+				"useNodejsImportProtocol": "error"
+			}
+		}
+	},
+	"overrides": [
+		{
+			"includes": ["**/*.css"],
+			"linter": {
+				"rules": {
+					"suspicious": {
+						"noUnknownAtRules": "off"
+					}
+				}
+			}
+		},
+		{
+			"includes": ["astro-react/**", "astro-solid/**", "docusaurus/**", "nextjs/**"],
+			"linter": {
+				"rules": {
+					"suspicious": {
+						"noConsole": "off"
+					}
+				}
+			}
+		},
+		{
+			"includes": ["docusaurus/**"],
+			"javascript": {
+				"jsxRuntime": "reactClassic"
+			}
+		}
+	]
+}

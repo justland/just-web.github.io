@@ -1,28 +1,39 @@
-import { atom } from 'nanostores'
 import { useStore } from '@nanostores/react'
+import { atom } from 'nanostores'
 
 export const nanoValue = atom({ a: 123 })
 
-export const nanoObject = atom((() => {
-	let a = 1
-	return {
-		plusOne() {
-			console.log('plusOne', a)
-			a += 1
-		},
-		a,
-		getA() {
-			return a
+export const nanoObject = atom(
+	(() => {
+		let a = 1
+		return {
+			plusOne() {
+				console.log('plusOne', a)
+				a += 1
+			},
+			a,
+			getA() {
+				return a
+			},
 		}
-	}
-})())
+	})(),
+)
 
 export function NanoValueIncrement() {
 	const x = useStore(nanoValue)
-	return <button onClick={() => nanoValue.set({
-		...x,
-		a: x.a + 1
-	})}>NanoValue ++</button>
+	return (
+		<button
+			type="button"
+			onClick={() =>
+				nanoValue.set({
+					...x,
+					a: x.a + 1,
+				})
+			}
+		>
+			NanoValue ++
+		</button>
+	)
 }
 
 export function NanoValueDisplay() {
@@ -32,16 +43,25 @@ export function NanoValueDisplay() {
 
 export function NanoObjectPlusOne() {
 	const x = useStore(nanoObject)
-	return <button onClick={() => {
-		x.plusOne()
-		nanoObject.set({ ...x })
-	}} > NanoObject.plusOne()</button >
+	return (
+		<button
+			type="button"
+			onClick={() => {
+				x.plusOne()
+				nanoObject.set({ ...x })
+			}}
+		>
+			{' '}
+			NanoObject.plusOne()
+		</button>
+	)
 }
 
 export function NanoObjectGet() {
 	const x = useStore(nanoObject)
-	return <div>
-		<div>NanoObject.getA(): {x.getA()}</div>
-	</div>
-
+	return (
+		<div>
+			<div>NanoObject.getA(): {x.getA()}</div>
+		</div>
+	)
 }
