@@ -4,9 +4,22 @@ on:
     branches: [main]
 
 jobs:
+  # Job id stays `code`: the branch ruleset requires the `code / all-checks` context.
   code:
     uses: justland/.github/.github/workflows/pnpm-verify.yml@main
     permissions:
       contents: read
     with:
       os: '["ubuntu-latest"]'
+
+  # Publishes the Docusaurus site to the gh-pages branch. `publish-dir` must be given:
+  # the workflow defaults to `./docs`, which does not exist in this repo, so every
+  # previous run pushed an empty tree — gh-pages holds nothing but `.nojekyll`.
+  # Docusaurus emits to `docusaurus/build`, and `pnpm build:doc` is what fills it.
+  docgen:
+    needs: code
+    permissions:
+      contents: write
+    uses: justland/.github/.github/workflows/pnpm-docs.yml@main
+    with:
+      publish-dir: ./docusaurus/build

@@ -5,6 +5,7 @@
 		"ar": "pnpm --filter ./astro-react",
 		"as": "pnpm --filter ./astro-solid",
 		"build": "turbo build",
+		"build:doc": "turbo run build:doc",
 		"clean": "turbo run clean",
 		"d": "pnpm --filter ./docusaurus",
 		"format": "biome format --write",
